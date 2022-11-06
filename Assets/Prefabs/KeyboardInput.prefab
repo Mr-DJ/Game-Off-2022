@@ -10,9 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5580155863037079712}
   - component: {fileID: -7458414128655880311}
-  - component: {fileID: -2664543740731968719}
-  - component: {fileID: -6807345898892334790}
-  - component: {fileID: -7374201340586718965}
   m_Layer: 0
   m_Name: KeyboardInput
   m_TagString: Untagged
@@ -36,42 +33,6 @@ Transform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &-7458414128655880311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5596408013960257569}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42ce54760a853a74f88505250f51f26c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &-2664543740731968719
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5596408013960257569}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42ce54760a853a74f88505250f51f26c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &-6807345898892334790
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5596408013960257569}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42ce54760a853a74f88505250f51f26c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &-7374201340586718965
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
