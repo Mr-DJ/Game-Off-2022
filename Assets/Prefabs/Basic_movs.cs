@@ -14,14 +14,14 @@ namespace indian_trys
             {
                 return;
             }
-            if(VirtualInputManager.instance.MoveRight && VirtualInputManager.instance.MoveLeft)
+            if(VirtualInputManager.instance.MoveRight)
             {
-                this.gameObject.transform.Translate(Vector3.forward * Speed * Time.deltaTime);
+                this.gameObject.transform.Translate(Speed * Time.deltaTime* Vector3.forward);
                 this.gameObject.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
             }
             if (VirtualInputManager.instance.MoveLeft)
             {
-                this.gameObject.transform.Translate(Vector3.forward * Speed * Time.deltaTime);
+                this.gameObject.transform.Translate(Speed * Time.deltaTime* Vector3.forward);
                 this.gameObject.transform.rotation=Quaternion.Euler(0f, -180f, 0f);
             }
         }
