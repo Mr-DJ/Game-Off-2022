@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -213,8 +213,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 486325820}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.69, y: 2.33, z: 0.85}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 10, y: 2.33, z: 0.85}
+  m_LocalScale: {x: 61.73, y: 1, z: 25.01}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1554579150}
@@ -393,7 +393,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: 10.69, y: 4.94, z: 1.79}
+  m_LocalPosition: {x: 2.13, y: 5.51, z: 1.79}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -415,8 +415,8 @@ MonoBehaviour:
   follow: {fileID: 2026567544}
   offset: {x: 10, y: 2, z: 0}
   speed: 0.025
-  trackXAxis: 0
-  trackYAxis: 0
+  trackXAxis: 1
+  trackYAxis: 1
   trackZAxis: 1
 --- !u!1 &1388533478
 GameObject:
@@ -730,7 +730,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5455184052749173342, guid: 84813864b919e074384cf9db4a3ce5d2, type: 3}
       propertyPath: m_UseGravity
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84813864b919e074384cf9db4a3ce5d2, type: 3}
