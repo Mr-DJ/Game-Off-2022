@@ -414,7 +414,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   follow: {fileID: 2026567544}
   offset: {x: 0, y: 1, z: -5}
-  speed: 1
+  maxRotation: {x: 5, y: 5}
+  smoothTime: 0.1
+  snap: 0
   trackXAxis: 1
   trackYAxis: 1
   trackZAxis: 1
