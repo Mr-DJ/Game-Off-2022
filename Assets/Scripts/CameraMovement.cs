@@ -5,12 +5,14 @@ using UnityEngine;
 public class CameraMovement : MonoBehaviour
 {
     public GameObject follow;
-    public Vector3 offset = new Vector3(10, 2, 0);
+    public Vector3 offset = new Vector3(0f, 1f, -5f);
 
-    public float speed = .025f;
-    public bool trackXAxis = false;
-    public bool trackYAxis = false;
+    public float smoothTime = .3f;
+    public bool trackXAxis = true;
+    public bool trackYAxis = true;
     public bool trackZAxis = true;
+
+    private Vector3 velocity = Vector3.zero;
 
     void Update()
     {
@@ -19,14 +21,10 @@ public class CameraMovement : MonoBehaviour
             (trackXAxis) ? followVec.x : this.transform.position.x,
             (trackYAxis) ? followVec.y : this.transform.position.y,
             (trackZAxis) ? followVec.z : this.transform.position.z
-        ); 
+        );
 
-        // Since the distance will keep shortening with each frame, the interpolator will eventually 
-        // slow down as it approaches its destination.
-        this.transform.position = Vector3.Lerp(
-            this.transform.position,
-            destination,
-            speed
+        this.transform.position = Vector3.SmoothDamp(
+            this.transform.position, destination, ref velocity, smoothTime
         );
     }
 }
