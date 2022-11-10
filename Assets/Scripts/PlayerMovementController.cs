@@ -4,20 +4,24 @@ using UnityEngine;
 
 public class PlayerMovementController : MonoBehaviour
 {
-    public float speed = 5;
+    public float speed = 1;
+    public float jumpForce = 2;
 
-    void Update()
+    private Rigidbody rb;
+
+    void Awake() {
+        rb = GetComponent<Rigidbody>();
+    }
+
+    void FixedUpdate()
     {
         float haxis = Input.GetAxis("Horizontal");
         float vaxis = Input.GetAxis("Vertical");
         
         if (Mathf.Abs(haxis) + Mathf.Abs(vaxis) > 0) 
         {
-            this.transform.rotation = Quaternion.Euler(0, Mathf.Rad2Deg * Mathf.Atan2(haxis, vaxis), 0);
-
-            haxis = Mathf.Abs(haxis);
-            vaxis = Mathf.Abs(vaxis);
-            this.transform.Translate(Time.deltaTime * speed * Mathf.Max(haxis, vaxis)  * Vector3.forward);
+            rb.MoveRotation(Quaternion.Euler(0, Mathf.Rad2Deg * Mathf.Atan2(haxis, vaxis), 0));
+            rb.velocity = new Vector3(haxis, 0, vaxis).normalized * speed * Time.fixedDeltaTime;
         }
     }
 }
