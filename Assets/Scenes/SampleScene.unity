@@ -176,7 +176,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 61b8ce0f89d9d4441b2e3cb3c15713f9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -618,7 +618,7 @@ GameObject:
   - component: {fileID: 1554579149}
   - component: {fileID: 1554579148}
   - component: {fileID: 1554579147}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1145,9 +1145,49 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7426083334570072640, guid: 84813864b919e074384cf9db4a3ce5d2, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7426083334570072642, guid: 84813864b919e074384cf9db4a3ce5d2, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7426083334570072643, guid: 84813864b919e074384cf9db4a3ce5d2, type: 3}
+      propertyPath: radius
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7426083334570072643, guid: 84813864b919e074384cf9db4a3ce5d2, type: 3}
+      propertyPath: jumpForce
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7426083334570072643, guid: 84813864b919e074384cf9db4a3ce5d2, type: 3}
+      propertyPath: maxDistance
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7426083334570072643, guid: 84813864b919e074384cf9db4a3ce5d2, type: 3}
+      propertyPath: gravityScale
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7426083334570072643, guid: 84813864b919e074384cf9db4a3ce5d2, type: 3}
+      propertyPath: boxCastSize.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7426083334570072643, guid: 84813864b919e074384cf9db4a3ce5d2, type: 3}
+      propertyPath: layerMask.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 7426083334570072643, guid: 84813864b919e074384cf9db4a3ce5d2, type: 3}
+      propertyPath: groundCheck.offset
+      value: -0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7426083334570072643, guid: 84813864b919e074384cf9db4a3ce5d2, type: 3}
+      propertyPath: groundCheck.radius
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7426083334570072643, guid: 84813864b919e074384cf9db4a3ce5d2, type: 3}
+      propertyPath: groundCheck.groundLayer.m_Bits
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 7426083334570072644, guid: 84813864b919e074384cf9db4a3ce5d2, type: 3}
       propertyPath: m_RootOrder
