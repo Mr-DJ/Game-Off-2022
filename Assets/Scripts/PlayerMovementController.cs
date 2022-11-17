@@ -25,27 +25,30 @@ public class PlayerMovementController : MonoBehaviour
     public GroundCheckConstraints groundCheck;
 
     private Rigidbody rb;
+    private SpriteRenderer spr;
+    private Animator animator;
 
     void Awake() {
         rb = GetComponent<Rigidbody>();
-    }
-
-    void Update()
-    {
-        float haxis = Input.GetAxis("Horizontal");
-        float vaxis = Input.GetAxis("Vertical");
-        
-        if (Mathf.Abs(haxis) + Mathf.Abs(vaxis) > 0) 
-        {
-            rb.MoveRotation(Quaternion.Euler(0, Mathf.Rad2Deg * Mathf.Atan2(haxis, vaxis), 0));
-            rb.velocity = new Vector3(haxis * speed, rb.velocity.y, vaxis * speed);
-        }
-
-
+        spr = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
 
     public void FixedUpdate()
     {
+        float haxis = Input.GetAxis("Horizontal");
+        float vaxis = Input.GetAxis("Vertical");
+        
+        bool walking = Mathf.Abs(haxis) + Mathf.Abs(vaxis) > 0;
+        animator.SetBool("walking", walking);
+
+        if (walking) 
+        {
+            // rb.MoveRotation(Quaternion.Euler(0, Mathf.Rad2Deg * Mathf.Atan2(haxis, vaxis), 0));
+            spr.flipX = haxis < 0;
+            rb.velocity = new Vector3(haxis * speed, rb.velocity.y, vaxis * speed);
+        }
+
         bool grounded = Physics.CheckSphere(
             transform.position - transform.up * groundCheck.offset, groundCheck.radius, groundCheck.groundLayer
         );
