@@ -45,7 +45,7 @@ public class PlayerMovementController : MonoBehaviour
         if (walking) 
         {
             // rb.MoveRotation(Quaternion.Euler(0, Mathf.Rad2Deg * Mathf.Atan2(haxis, vaxis), 0));
-            spr.flipX = haxis < 0;
+            rb.transform.rotation = Quaternion.Euler(0, haxis > 0 ? 0 : 180, 0);
             rb.velocity = new Vector3(haxis * speed, rb.velocity.y, vaxis * speed);
         }
 

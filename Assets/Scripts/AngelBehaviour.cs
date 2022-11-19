@@ -26,7 +26,7 @@ public class AngelBehaviour : MonoBehaviour
         agent.updateRotation = false;
     }
 
-    void Update()
+    void FixedUpdate()
     {   
         if (Mathf.Abs(agent.velocity.x) > 0)
             spr.flipX = agent.velocity.x < 0;
