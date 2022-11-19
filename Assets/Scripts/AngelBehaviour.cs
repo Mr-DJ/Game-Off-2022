@@ -8,6 +8,7 @@ public class AngelBehaviour : MonoBehaviour
     public GameObject player;
     
     public bool freeze;
+    public bool chase;
 
     private FieldOfView fov;
     private NavMeshAgent agent;
@@ -26,17 +27,25 @@ public class AngelBehaviour : MonoBehaviour
         agent.updateRotation = false;
     }
 
-    void FixedUpdate()
+    void Update()
     {   
         if (Mathf.Abs(agent.velocity.x) > 0)
             spr.flipX = agent.velocity.x < 0;
 
-        bool chase = fov.visibleTargets.Contains(player) && !freeze;
+        chase = fov.visibleTargets.Contains(player) && !freeze;
         
         animator.SetBool("chase", chase);
-        agent.isStopped = !chase;
-        
+
         if (chase) 
+        {
             agent.SetDestination(fov.playerRef.transform.position);
+            StartCoroutine(ChaseRoutine());
+        }
+    }
+
+    private IEnumerator ChaseRoutine()
+    {
+        yield return new WaitUntil(() => animator.GetCurrentAnimatorStateInfo(0).IsName("chase"));
+        agent.isStopped = !chase;
     }
 }
