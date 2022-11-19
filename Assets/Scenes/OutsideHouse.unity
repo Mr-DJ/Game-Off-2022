@@ -509,7 +509,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   follow: {fileID: 2144759149}
-  offset: {x: 0, y: 1, z: -5}
+  offset: {x: 0, y: 1, z: -10}
   maxRotation: {x: 5, y: 5}
   smoothTime: 0.1
   snap: 0
@@ -6411,7 +6411,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 238026460}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: help (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6754,6 +6754,10 @@ PrefabInstance:
     - target: {fileID: 1625466172278467724, guid: 65ea14caa2e9f50448591cf328020276, type: 3}
       propertyPath: m_Name
       value: indian_road (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1625466172278467724, guid: 65ea14caa2e9f50448591cf328020276, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1625466172278467724, guid: 65ea14caa2e9f50448591cf328020276, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -10379,7 +10383,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 490783403}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: insideindianroad (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11506,6 +11510,10 @@ PrefabInstance:
       value: indian_road (1)
       objectReference: {fileID: 0}
     - target: {fileID: 1625466172278467724, guid: 65ea14caa2e9f50448591cf328020276, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1625466172278467724, guid: 65ea14caa2e9f50448591cf328020276, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -12026,6 +12034,10 @@ PrefabInstance:
       value: indian_road (1)
       objectReference: {fileID: 0}
     - target: {fileID: 1625466172278467724, guid: 65ea14caa2e9f50448591cf328020276, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1625466172278467724, guid: 65ea14caa2e9f50448591cf328020276, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -12097,7 +12109,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 877521625}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: insideindianroad (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12384,6 +12396,10 @@ PrefabInstance:
     - target: {fileID: 1625466172278467724, guid: 65ea14caa2e9f50448591cf328020276, type: 3}
       propertyPath: m_Name
       value: indian_road (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1625466172278467724, guid: 65ea14caa2e9f50448591cf328020276, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1625466172278467724, guid: 65ea14caa2e9f50448591cf328020276, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -13172,6 +13188,10 @@ PrefabInstance:
       value: indian_road (1)
       objectReference: {fileID: 0}
     - target: {fileID: 1625466172278467724, guid: 65ea14caa2e9f50448591cf328020276, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1625466172278467724, guid: 65ea14caa2e9f50448591cf328020276, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -13715,7 +13735,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1184401114}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: insideindianroad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14061,6 +14081,10 @@ PrefabInstance:
       value: indian_road
       objectReference: {fileID: 0}
     - target: {fileID: 1625466172278467724, guid: 65ea14caa2e9f50448591cf328020276, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1625466172278467724, guid: 65ea14caa2e9f50448591cf328020276, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -14189,7 +14213,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1319767891}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: insideindianroad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14224,7 +14248,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1418493903}
   - component: {fileID: 1418493901}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: all_roads
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14339,7 +14363,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1432666560}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: help
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14625,6 +14649,10 @@ PrefabInstance:
     - target: {fileID: 1625466172278467724, guid: 65ea14caa2e9f50448591cf328020276, type: 3}
       propertyPath: m_Name
       value: indian_road (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1625466172278467724, guid: 65ea14caa2e9f50448591cf328020276, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1625466172278467724, guid: 65ea14caa2e9f50448591cf328020276, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -15398,6 +15426,10 @@ PrefabInstance:
       value: indian_road
       objectReference: {fileID: 0}
     - target: {fileID: 1625466172278467724, guid: 65ea14caa2e9f50448591cf328020276, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1625466172278467724, guid: 65ea14caa2e9f50448591cf328020276, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -15916,6 +15948,10 @@ PrefabInstance:
     - target: {fileID: 1625466172278467724, guid: 65ea14caa2e9f50448591cf328020276, type: 3}
       propertyPath: m_Name
       value: indian_road (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1625466172278467724, guid: 65ea14caa2e9f50448591cf328020276, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1625466172278467724, guid: 65ea14caa2e9f50448591cf328020276, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -17014,6 +17050,10 @@ PrefabInstance:
       value: indian_road (2)
       objectReference: {fileID: 0}
     - target: {fileID: 1625466172278467724, guid: 65ea14caa2e9f50448591cf328020276, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1625466172278467724, guid: 65ea14caa2e9f50448591cf328020276, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -17108,15 +17148,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  jumpForce: 5
+  jumpForce: 15
   gravityScale: 3
   groundCheck:
-    radius: 0
-    offset: 0
+    radius: 1
+    offset: 0.5
     grounded: 0
     groundLayer:
       serializedVersion: 2
-      m_Bits: 0
+      m_Bits: 128
 --- !u!65 &2144759151
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17424,6 +17464,10 @@ PrefabInstance:
     - target: {fileID: 1625466172278467724, guid: 65ea14caa2e9f50448591cf328020276, type: 3}
       propertyPath: m_Name
       value: indian_road
+      objectReference: {fileID: 0}
+    - target: {fileID: 1625466172278467724, guid: 65ea14caa2e9f50448591cf328020276, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1625466172278467724, guid: 65ea14caa2e9f50448591cf328020276, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -19226,6 +19270,10 @@ PrefabInstance:
     - target: {fileID: 1625466172278467724, guid: 65ea14caa2e9f50448591cf328020276, type: 3}
       propertyPath: m_Name
       value: indian_road
+      objectReference: {fileID: 0}
+    - target: {fileID: 1625466172278467724, guid: 65ea14caa2e9f50448591cf328020276, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1625466172278467724, guid: 65ea14caa2e9f50448591cf328020276, type: 3}
       propertyPath: m_StaticEditorFlags
