@@ -54,8 +54,7 @@ public class PlayerMovementController : MonoBehaviour
         );
         
         // Apply custom gravity scale when airbone to ground the player faster
-        if (!grounded)
-            rb.AddForce(Physics.gravity * (gravityScale - 1) * rb.mass);
+        rb.AddForce(Physics.gravity * (gravityScale - 1) * rb.mass);
 
         if (Input.GetButtonDown("Jump") && grounded) 
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);

@@ -16,7 +16,7 @@ public class CameraMovement : MonoBehaviour
 
     private Vector3 velocity = Vector3.zero;
 
-    void FixedUpdate()
+    void Update()
     {
         Vector3 followVec = this.follow.transform.position + offset; 
         Vector3 destination = new Vector3(
