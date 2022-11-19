@@ -31,7 +31,7 @@ public class PlayerMovementController : MonoBehaviour
     void Awake() {
         rb = GetComponent<Rigidbody>();
         spr = GetComponent<SpriteRenderer>();
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
     }
 
     public void FixedUpdate()
@@ -40,7 +40,7 @@ public class PlayerMovementController : MonoBehaviour
         float vaxis = Input.GetAxis("Vertical");
         
         bool walking = Mathf.Abs(haxis) + Mathf.Abs(vaxis) > 0;
-        animator.SetBool("walking", walking);
+        //animator.SetBool("walking", walking);
 
         if (walking) 
         {
