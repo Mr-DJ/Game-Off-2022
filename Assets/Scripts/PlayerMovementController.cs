@@ -16,14 +16,23 @@ public class GroundCheckConstraints
     public LayerMask groundLayer;
 }
 
+[Serializable]
+public class Speed 
+{
+    public float current;
+    public float maximum;
+    public float minimum;
+    public float turning;
+    public float acceleration;
+}
+
 public class PlayerMovementController : MonoBehaviour
 {
-    public float moveSpeed = 5;
-    public float turnSpeed = 3;
-    public float maxLeaning = 45;
-    public float gravityScale;
+    public Speed speed;
 
     public GroundCheckConstraints groundCheck;
+    public float maxLeaning = 30;
+    public float gravityScale;
 
     private Rigidbody rb;
 
@@ -35,8 +44,10 @@ public class PlayerMovementController : MonoBehaviour
     {
         float haxis = Input.GetAxis("Horizontal");
         float vaxis = Input.GetAxis("Vertical");
+
+        speed.current = Mathf.Min(speed.maximum, Mathf.Max(haxis * Time.deltaTime * speed.acceleration + speed.current, speed.minimum));
         
-        rb.velocity = new Vector3(moveSpeed, rb.velocity.y, vaxis * turnSpeed);
+        rb.velocity = new Vector3(speed.current, rb.velocity.y, vaxis * speed.turning);
         transform.rotation = Quaternion.Euler(vaxis * maxLeaning, 0, 0);
 
         bool grounded = Physics.CheckSphere(

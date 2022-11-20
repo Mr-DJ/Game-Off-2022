@@ -11589,10 +11589,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 543dc5abe1493724fb989393af93a3fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 25
-  turnSpeed: 5
-  maxLeaning: 30
-  gravityScale: 3
+  speed:
+    current: 25
+    maximum: 50
+    minimum: 15
+    turning: 10
+    acceleration: 20
   groundCheck:
     radius: 1
     offset: 0.5
@@ -11600,6 +11602,8 @@ MonoBehaviour:
     groundLayer:
       serializedVersion: 2
       m_Bits: 128
+  maxLeaning: 30
+  gravityScale: 3
 --- !u!54 &2144759152
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11614,7 +11618,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!4 &2144759153
 Transform:
