@@ -47,15 +47,12 @@ public class PlayerMovementController : MonoBehaviour
 
         speed.current = Mathf.Min(speed.maximum, Mathf.Max(haxis * Time.deltaTime * speed.acceleration + speed.current, speed.minimum));
         
-        rb.velocity = new Vector3(speed.current, rb.velocity.y, vaxis * speed.turning);
+        rb.AddForce(speed.current - rb.velocity.x, 0, vaxis * speed.turning - rb.velocity.z);
         transform.rotation = Quaternion.Euler(vaxis * maxLeaning, 0, 0);
 
         bool grounded = Physics.CheckSphere(
             transform.position - transform.up * groundCheck.offset, groundCheck.radius, groundCheck.groundLayer
         );
-        
-        // Apply custom gravity scale when airbone to ground the player faster
-        rb.AddForce(Physics.gravity * (gravityScale - 1) * rb.mass);
     }
 
     void OnDrawGizmos() 
