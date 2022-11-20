@@ -18,20 +18,17 @@ public class GroundCheckConstraints
 
 public class PlayerMovementController : MonoBehaviour
 {
-    public float speed = 3;
-    public float jumpForce = 5;
+    public float moveSpeed = 5;
+    public float turnSpeed = 3;
+    public float maxLeaning = 45;
     public float gravityScale;
 
     public GroundCheckConstraints groundCheck;
 
     private Rigidbody rb;
-    private SpriteRenderer spr;
-    private Animator animator;
 
     void Awake() {
         rb = GetComponent<Rigidbody>();
-        spr = GetComponent<SpriteRenderer>();
-        //animator = GetComponent<Animator>();
     }
 
     public void FixedUpdate()
@@ -39,15 +36,8 @@ public class PlayerMovementController : MonoBehaviour
         float haxis = Input.GetAxis("Horizontal");
         float vaxis = Input.GetAxis("Vertical");
         
-        bool walking = Mathf.Abs(haxis) + Mathf.Abs(vaxis) > 0;
-        //animator.SetBool("walking", walking);
-
-        if (walking) 
-        {
-            // rb.MoveRotation(Quaternion.Euler(0, Mathf.Rad2Deg * Mathf.Atan2(haxis, vaxis), 0));
-            rb.transform.rotation = Quaternion.Euler(0, haxis > 0 ? 0 : 180, 0);
-            rb.velocity = new Vector3(haxis * speed, rb.velocity.y, vaxis * speed);
-        }
+        rb.velocity = new Vector3(moveSpeed, rb.velocity.y, vaxis * turnSpeed);
+        transform.rotation = Quaternion.Euler(vaxis * maxLeaning, 0, 0);
 
         bool grounded = Physics.CheckSphere(
             transform.position - transform.up * groundCheck.offset, groundCheck.radius, groundCheck.groundLayer
@@ -55,9 +45,6 @@ public class PlayerMovementController : MonoBehaviour
         
         // Apply custom gravity scale when airbone to ground the player faster
         rb.AddForce(Physics.gravity * (gravityScale - 1) * rb.mass);
-
-        if (Input.GetButtonDown("Jump") && grounded) 
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
     }
 
     void OnDrawGizmos() 

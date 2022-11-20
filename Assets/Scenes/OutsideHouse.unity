@@ -294,14 +294,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 94964086}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -23.11, y: 0.86, z: -12.09}
+  m_LocalRotation: {x: 0.13052616, y: 0, z: 0, w: 0.9914449}
+  m_LocalPosition: {x: -23.11, y: 0.86, z: -8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 15, y: 0, z: 0}
 --- !u!114 &94964090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,13 +315,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   follow: {fileID: 2144759149}
-  offset: {x: 0, y: 1, z: -10}
-  maxRotation: {x: 5, y: 5}
+  offset: {x: 5, y: 2.5, z: -12.5}
+  maxRotation: {x: 0, y: 0}
   smoothTime: 0.1
   snap: 0
   trackXAxis: 1
   trackYAxis: 1
-  trackZAxis: 1
+  trackZAxis: 0
 --- !u!1 &95222476
 GameObject:
   m_ObjectHideFlags: 0
@@ -11568,8 +11568,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2144759153}
   - component: {fileID: 2144759152}
-  - component: {fileID: 2144759151}
   - component: {fileID: 2144759150}
+  - component: {fileID: 2144759154}
   m_Layer: 0
   m_Name: bikey
   m_TagString: Untagged
@@ -11589,8 +11589,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 543dc5abe1493724fb989393af93a3fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  jumpForce: 15
+  moveSpeed: 25
+  turnSpeed: 5
+  maxLeaning: 30
   gravityScale: 3
   groundCheck:
     radius: 1
@@ -11599,19 +11600,6 @@ MonoBehaviour:
     groundLayer:
       serializedVersion: 2
       m_Bits: 128
---- !u!65 &2144759151
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2144759149}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.32, y: 1.48, z: 1.03}
-  m_Center: {x: 0.21, y: -0.18, z: -0.35}
 --- !u!54 &2144759152
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11626,7 +11614,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!4 &2144759153
 Transform:
@@ -11636,7 +11624,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2144759149}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21.744738, y: 5.53, z: 7.199}
+  m_LocalPosition: {x: -20, y: 6, z: 7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11644,6 +11632,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &2144759154
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2144759149}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2.5
+  m_Direction: 0
+  m_Center: {x: 0, y: -0.5, z: 0}
 --- !u!4 &11903279126555688
 Transform:
   m_ObjectHideFlags: 0
@@ -13485,7 +13487,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8841593641255114667}
   m_LocalRotation: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: 0.20473671, y: -1.048907, z: -0.32954454}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:
