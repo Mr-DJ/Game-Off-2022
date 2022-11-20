@@ -10,8 +10,6 @@ public class PlatformGenerator : MonoBehaviour
     private Vector3 firstPosition, lastPosition;
     private GameObject lastPlatform;
 
-    private float size;
-
     void Start()
     {
         GameObject platform = platforms[0];
