@@ -14,7 +14,12 @@ public class FieldOfView : MonoBehaviour
     public LayerMask targetMask;
     public LayerMask obstructionMask;
 
-    public bool canSeePlayer;
+    public HashSet<GameObject> visibleTargets;
+
+    void Awake() 
+    {
+        visibleTargets = new HashSet<GameObject>();
+    }
 
     private void Start()
     {
@@ -39,22 +44,25 @@ public class FieldOfView : MonoBehaviour
 
         if (rangeChecks.Length != 0)
         {
-            Transform target = rangeChecks[0].transform;
-            Vector3 directionToTarget = (target.position - transform.position).normalized;
-
-            if (Vector3.Angle(transform.forward, directionToTarget) < angle / 2)
+            foreach (Collider rangeCheck in rangeChecks) 
             {
-                float distanceToTarget = Vector3.Distance(transform.position, target.position);
+                Transform target = rangeCheck.transform;
+                Vector3 directionToTarget = (target.position - transform.position).normalized;
 
-                if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask))
-                    canSeePlayer = true;
+                if (Vector3.Angle(transform.right, directionToTarget) < angle / 2)
+                {
+                    float distanceToTarget = Vector3.Distance(transform.position, target.position);
+
+                    if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask))
+                        visibleTargets.Add(rangeCheck.gameObject);
+                    else
+                        visibleTargets.Remove(rangeCheck.gameObject);
+                }
                 else
-                    canSeePlayer = false;
+                    visibleTargets.Remove(rangeCheck.gameObject);
             }
-            else
-                canSeePlayer = false;
         }
-        else if (canSeePlayer)
-            canSeePlayer = false;
+        else if (visibleTargets.Count > 0)
+            visibleTargets.Clear();
     }
 }

@@ -16,13 +16,23 @@ public class GroundCheckConstraints
     public LayerMask groundLayer;
 }
 
+[Serializable]
+public class Speed 
+{
+    public float current;
+    public float maximum;
+    public float minimum;
+    public float turning;
+    public float acceleration;
+}
+
 public class PlayerMovementController : MonoBehaviour
 {
-    public float speed = 3;
-    public float jumpForce = 5;
-    public float gravityScale;
+    public Speed speed;
 
     public GroundCheckConstraints groundCheck;
+    public float maxLeaning = 30;
+    public float gravityScale;
 
     private Rigidbody rb;
 
@@ -30,32 +40,19 @@ public class PlayerMovementController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    void Update()
+    public void FixedUpdate()
     {
         float haxis = Input.GetAxis("Horizontal");
         float vaxis = Input.GetAxis("Vertical");
+
+        speed.current = Mathf.Min(speed.maximum, Mathf.Max(haxis * Time.deltaTime * speed.acceleration + speed.current, speed.minimum));
         
-        if (Mathf.Abs(haxis) + Mathf.Abs(vaxis) > 0) 
-        {
-            rb.MoveRotation(Quaternion.Euler(0, Mathf.Rad2Deg * Mathf.Atan2(haxis, vaxis), 0));
-            rb.velocity = new Vector3(haxis * speed, rb.velocity.y, vaxis * speed);
-        }
+        rb.AddForce(speed.current - rb.velocity.x, 0, vaxis * speed.turning - rb.velocity.z);
+        transform.rotation = Quaternion.Euler(vaxis * maxLeaning, 0, 0);
 
-
-    }
-
-    public void FixedUpdate()
-    {
         bool grounded = Physics.CheckSphere(
             transform.position - transform.up * groundCheck.offset, groundCheck.radius, groundCheck.groundLayer
         );
-        
-        // Apply custom gravity scale when airbone to ground the player faster
-        if (!grounded)
-            rb.AddForce(Physics.gravity * (gravityScale - 1) * rb.mass);
-
-        if (Input.GetButtonDown("Jump") && grounded) 
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
     }
 
     void OnDrawGizmos() 

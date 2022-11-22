@@ -1,22 +1,23 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class EnemyBehaviour : MonoBehaviour
 {
-    private FieldOfView fov;
-    private NavMeshAgent agent;
+    public GameObject follow;
 
-    public void Awake()
+    public float range;
+
+    private Rigidbody rb;
+
+    void Start()
     {
-        fov = GetComponent<FieldOfView>();
-        agent = GetComponent<NavMeshAgent>();
+        rb = GetComponent<Rigidbody>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        if (fov.canSeePlayer) 
-            agent.SetDestination(fov.playerRef.transform.position);
+        rb.AddForce(follow.GetComponent<Rigidbody>().velocity - rb.velocity, ForceMode.VelocityChange);
     }
 }
